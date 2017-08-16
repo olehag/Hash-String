@@ -1,4 +1,7 @@
-#change $HashName between: MD5, RIPEMD160, SHA1, SHA256, SHA384 and SHA512
+#Lord Hagen / olehag04@nfk.no
+
+
+#Userinput one algorithm: MD5, RIPEMD160, SHA1, SHA256, SHA384 and SHA512
 Write-Host "`tChoose one of the following algorithms:" -ForegroundColor Green
 Write-Host "`t`tMD5, RIPEMD160, SHA1, SHA256, SHA384 and SHA512" -ForegroundColor Yellow
 Write-Host
