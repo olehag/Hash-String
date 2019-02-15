@@ -1,12 +1,5 @@
 #Lord Hagen / olehag04@nfk.no
 
-
-#Userinput one algorithm: MD5, RIPEMD160, SHA1, SHA256, SHA384 and SHA512
-Write-Host "`tChoose one of the following algorithms:" -ForegroundColor Green
-Write-Host "`t`tMD5, RIPEMD160, SHA1, SHA256, SHA384 and SHA512" -ForegroundColor Yellow
-Write-Host
-$HashName = Read-Host -Prompt "`tAlgorithm"
-
 Function Get-StringHash([String] $String,$HashName = $HashName)
 {
 $StringBuilder = New-Object System.Text.StringBuilder
@@ -17,13 +10,40 @@ $StringBuilder = New-Object System.Text.StringBuilder
 $StringBuilder.ToString()
 }
 
-Clear-Host
-Write-Host
+while ($true)
+{
+
+#Array of algorithms
+$A = @("MD5", "RIPEMD160", "SHA1", "SHA256", "SHA384", "SHA512")
+
+#Get algorithm
+do {
+    Write-Host "`tChoose one of the following algorithms:" -ForegroundColor Green
+    Write-Host "`t`tMD5, RIPEMD160, SHA1, SHA256, SHA384 and SHA512" -ForegroundColor Yellow
+    Write-Host
+    $Algorithm = Read-Host "`tAlgorithm" 
+    $HashName = switch ($Algorithm) {
+        'MD5' {'MD5'}
+        'RIPEMD160' {'RIPEMD160'}
+        'SHA1' {'SHA1'}
+        'SHA256' {'SHA256'}
+        'SHA384' {'SHA384'}
+        'SHA512' {'SHA512'}
+    Default {
+        Clear-Host
+        break
+        }
+    }
+} until ($HashName -match $A.0.1.2.3.4.5 )
+
 
 #Get user-input.
+write-host
+Write-Host "`t-----------------------------------------"
 $myvar = Read-Host -Prompt "`tEnter string to hash using $HashName algorithm"
 $hashedstring = Get-StringHash $myvar
-Write-Host
+Write-host
+Write-Host "`t-----------------------------------------"
 
 #Output result.
 Write-Host "`tHashed input:" -ForegroundColor Green
@@ -38,6 +58,8 @@ Write-Host
 #Exit
 Write-Host "`tPress any key to end ..."
 $x = $host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+Clear-Host
+}
 
 <#
 Original script shamelessly stolen from:
