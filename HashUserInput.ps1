@@ -10,11 +10,11 @@ $StringBuilder = New-Object System.Text.StringBuilder
 $StringBuilder.ToString()
 }
 
-while ($true)
-{
-
 #Array of algorithms
 $A = @("MD5", "RIPEMD160", "SHA1", "SHA256", "SHA384", "SHA512")
+
+while ($true)
+{
 
 #Get algorithm
 do {
@@ -31,10 +31,9 @@ do {
         'SHA512' {'SHA512'}
     Default {
         Clear-Host
-        break
         }
     }
-} until ($HashName -match $A.0.1.2.3.4.5 )
+} until ($HashName -match $A.0)
 
 
 #Get user-input.
