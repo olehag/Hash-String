@@ -1,4 +1,3 @@
-# HashUserInput
 SYNOPSIS
 ========
 * Compute the Hashvalue of a userinput and return it in selected Algorithm.
