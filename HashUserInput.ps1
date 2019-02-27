@@ -1,4 +1,4 @@
-#Lord Hagen / olehag04@nfk.no
+#Get-StringHash - https://gallery.technet.microsoft.com/scriptcenter/Get-StringHash-aa843f71
 
 Function Get-StringHash([String] $String,$HashName = $HashName)
 {
@@ -59,10 +59,3 @@ Write-Host "`tPress any key to end ..."
 $x = $host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
 Clear-Host
 }
-
-<#
-Original script shamelessly stolen from:
-https://gallery.technet.microsoft.com/scriptcenter/Get-StringHash-aa843f71
-
-Added abit of functionality
-#>
