@@ -4,4 +4,4 @@ SYNOPSIS
 * Supports: MD5, RIPEMD160, SHA1, SHA256, SHA384 and SHA512
 * Auto-copies to Clipboard.
 
-![Screenshot](Screenshot/hashscript.png)
+![Screenshot](Screenshot/hashscript.PNG)
